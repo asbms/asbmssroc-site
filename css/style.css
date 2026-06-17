@@ -1,0 +1,268 @@
+/* ============================================================
+   Ana Senra & Bruno Machado Silva, SROC, Lda. — asbmssroc.pt
+   Conceito: editorial minimalista — papel, tinta, verde-floresta
+   ============================================================ */
+
+:root {
+  --paper: #f7f5f1;
+  --white: #ffffff;
+  --ink: #1a1a17;
+  --muted: #67675f;
+  --green: #1c4734;
+  --green-dark: #143426;
+  --green-soft: #e9efe9;
+  --rule: #ddd9d0;
+  --max: 1100px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); }
+
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 1.6rem; }
+
+/* ---- Placeholders provisórios ---- */
+.todo {
+  background: #fdf3c8;
+  border-bottom: 2px dotted #c9a227;
+  padding: 0 .2em;
+  font-style: normal;
+}
+
+/* ============ Header ============ */
+.site-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .4rem 1.5rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.brand { color: var(--ink); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
+.brand:hover { text-decoration: none; }
+.brand .amp { color: var(--green); }
+.brand .tag {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: .8rem;
+  margin-left: .6rem;
+  letter-spacing: .08em;
+}
+
+.site-nav { display: flex; flex-wrap: wrap; gap: .2rem 1.4rem; }
+.site-nav a {
+  color: var(--ink);
+  font-size: .88rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.site-nav a:hover { color: var(--green); text-decoration: none; }
+
+/* ============ Hero ============ */
+.hero {
+  background: linear-gradient(150deg, var(--green) 0%, var(--green-dark) 100%);
+  padding: 6rem 0 5rem;
+}
+.hero .eyebrow { color: #b9d8c4; }
+.hero h1 { color: var(--paper); }
+.hero .btn { background: var(--paper); color: var(--green); }
+.hero .btn:hover { background: #ffffff; }
+.hero .link-arrow { color: #dfe9e0; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--green);
+  margin-bottom: 1.6rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  max-width: 850px;
+}
+
+.hero .lead {
+  margin-top: 1.8rem;
+  font-size: 1.12rem;
+  color: var(--muted);
+  max-width: 620px;
+}
+
+.hero .actions { margin-top: 2.6rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  padding: .85rem 2rem;
+  font-size: .92rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  border-radius: 2px;
+}
+.btn:hover { background: var(--green-dark); text-decoration: none; }
+
+.link-arrow { font-weight: 600; font-size: .95rem; }
+.link-arrow::after { content: " \2192"; }
+
+/* ============ Secções numeradas ============ */
+.sec { padding: 4.5rem 0; border-bottom: 1px solid var(--rule); }
+.sec:last-of-type { border-bottom: none; min-height: 70vh; }
+.sec.tint { background: var(--white); }
+
+.sec-grid {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.sec-label { position: sticky; top: 5.5rem; }
+.sec-label .num {
+  display: block;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: .2em;
+  margin-bottom: .4rem;
+}
+.sec-label h2 { font-size: 1.35rem; }
+
+.sec-body { max-width: 720px; }
+.sec-body > p { margin-bottom: 1.1rem; color: var(--ink); }
+.sec-body p.soft { color: var(--muted); }
+.sec-body h3 { font-size: 1.05rem; margin: 1.8rem 0 .5rem; }
+
+/* ---- Equipa ---- */
+.people { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.person { border-top: 3px solid var(--green); padding-top: 1.2rem; }
+.person h3 { font-size: 1.35rem; letter-spacing: -0.01em; }
+.person .role {
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--green);
+  margin: .4rem 0 1rem;
+}
+.person p { font-size: .94rem; color: var(--muted); }
+
+/* ---- Serviços ---- */
+.service { display: grid; grid-template-columns: 70px 1fr; gap: 1.5rem; padding: 1.8rem 0; border-top: 1px solid var(--rule); }
+.service:first-of-type { border-top: none; padding-top: 0; }
+.service .s-num {
+  font-size: 1.6rem;
+  font-weight: 200;
+  color: var(--green);
+  line-height: 1.1;
+}
+.service h3 { font-size: 1.15rem; margin-bottom: .5rem; }
+.service p, .service li { font-size: .94rem; color: var(--muted); }
+.service ul { margin: .7rem 0 0 1.2rem; }
+.service li { margin-bottom: .3rem; }
+
+.note {
+  background: var(--green-soft);
+  padding: 1rem 1.3rem;
+  font-size: .88rem;
+  color: var(--ink);
+  margin-top: 1rem;
+  border-radius: 2px;
+}
+
+/* ---- Contactos ---- */
+.contact-email {
+  display: inline-block;
+  font-size: .94rem;
+  font-weight: 700;
+  color: var(--green);
+  margin: .5rem 0 2rem;
+}
+.contact-email:hover { color: var(--green-dark); }
+
+.contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; max-width: 640px; }
+.contact-details .item { font-size: .94rem; }
+.contact-details .label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--green);
+  margin-bottom: .25rem;
+}
+
+/* ============ Footer ============ */
+.site-footer { border-top: 1px solid var(--rule); background: var(--white); }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2.5rem;
+  padding: 2.8rem 1.6rem 2.2rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.site-footer h4 {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--green);
+  margin-bottom: .8rem;
+}
+.site-footer p, .site-footer a, .site-footer li { font-size: .86rem; color: var(--muted); }
+.site-footer a:hover { color: var(--green); }
+.site-footer ul { list-style: none; }
+.site-footer li { margin-bottom: .4rem; }
+.footer-bottom {
+  border-top: 1px solid var(--rule);
+  padding: 1rem 1.6rem;
+  text-align: center;
+  font-size: .76rem;
+  color: var(--muted);
+}
+
+/* ---- Páginas legais ---- */
+.prose { max-width: 760px; padding: 4rem 0 5rem; }
+.prose h1 { font-size: 2rem; margin-bottom: .8rem; }
+.prose h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+.prose p, .prose li { font-size: .95rem; color: var(--muted); }
+.prose ul { margin: .6rem 0 .6rem 1.3rem; }
+
+/* ============ Responsivo ============ */
+@media (max-width: 800px) {
+  .hero { padding: 3.5rem 0 3rem; }
+  .sec { padding: 3rem 0; }
+  .sec-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+  .sec-label { position: static; }
+  .people { grid-template-columns: 1fr; }
+  .service { grid-template-columns: 48px 1fr; gap: 1rem; }
+  .contact-details { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+}
