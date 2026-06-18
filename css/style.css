@@ -206,6 +206,21 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .contact-email:hover { color: var(--green-dark); }
 
+/* Ícones de contacto */
+.ico {
+  width: 1.05em;
+  height: 1.05em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -0.16em;
+  margin-right: .55em;
+}
+.contact-details .item a { display: inline-flex; align-items: center; }
+.contact-details .item .ico { color: var(--green); }
+
 .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; max-width: 640px; }
 .contact-details .item { font-size: .94rem; }
 .contact-details .label {
